@@ -1,0 +1,111 @@
+.services {
+  background: var(--gray-50);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+  cursor: default;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-img-wrap {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.service-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-img {
+  transform: scale(1.06);
+}
+
+/* Gradients for each class from siteData */
+.si-1  { background: linear-gradient(135deg, #1a3d2b, #2d6a4f); }
+.si-2  { background: linear-gradient(135deg, #2d6a4f, #40916c); }
+.si-3  { background: linear-gradient(135deg, #1a3d2b, #52b788); }
+.si-4  { background: linear-gradient(135deg, #0d2b1a, #2d6a4f); }
+.si-5  { background: linear-gradient(135deg, #2d6a4f, #1a3d2b); }
+.si-6  { background: linear-gradient(135deg, #40916c, #1b4332); }
+.si-7  { background: linear-gradient(135deg, #1b4332, #52b788); }
+.si-8  { background: linear-gradient(135deg, #2d6a4f, #74c69d); }
+.si-9  { background: linear-gradient(135deg, #1a3d2b, #023e8a); }
+.si-10 { background: linear-gradient(135deg, #1a3d2b, #40916c); }
+
+.service-icon-badge {
+  position: absolute;
+  top: 156px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green-fresh);
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+}
+
+.service-body {
+  padding: 36px 22px 24px;
+}
+
+.service-body h3 {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.service-body p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.service-hover-line {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: var(--green-fresh);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s ease;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.service-card:hover .service-hover-line {
+  transform: scaleX(1);
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
